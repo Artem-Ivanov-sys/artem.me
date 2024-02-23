@@ -299,6 +299,10 @@ body {
     transform: translate(-100px);
   }
 }
+:root {
+  --name-clip: none;
+}
+
 main {
   position: relative;
   min-height: 10000px;
@@ -314,6 +318,29 @@ main {
   width: 100%;
   height: 100%;
   z-index: -2;
+}
+
+header {
+  background-color: rgb(37, 37, 37);
+  color: rgb(37, 37, 37);
+  font-size: 3em;
+  margin-top: 15vh;
+  height: 1em;
+  padding: 40px;
+}
+header span {
+  margin-left: 300px;
+  position: absolute;
+  display: block;
+  line-height: 1em;
+  font-weight: bolder;
+}
+header span::before {
+  position: absolute;
+  color: white;
+  font-weight: bolder;
+  content: attr(data-text);
+  clip-path: var(--name-clip);
 }
 
 /*# sourceMappingURL=style.css.map */
