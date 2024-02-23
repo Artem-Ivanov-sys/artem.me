@@ -65,4 +65,10 @@ function mainScrollParalax(e) {
             i.item.y.real = i.item.y.true + max_paralax * percentage;
         }
     }
+
+    document.querySelector("header > span").style.transform = "translateY("+Math.min(100, e.scrollY / 2)+"px)";
+    let height = Number.parseInt(document.getElementsByTagName("header")[0].clientHeight);
+    document.documentElement.style.setProperty("--name-clip", 
+        `path('M 0 ${-Math.min(100, e.scrollY / 2)-40} L 0 ${height-Math.min(100, e.scrollY / 2)-40} L 1000 \
+        ${height-Math.min(100, e.scrollY / 2)-40} L 0 ${-Math.min(100, e.scrollY / 2)-40}`);
 }
